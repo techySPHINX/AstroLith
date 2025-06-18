@@ -15,22 +15,22 @@
 
 ## 🚀 Overview
 
-**AstroLith** is a full-stack, generative AI-powered software engineering agentic-platform that acts as a MERN stack developer, generating and serving code dynamically using WebContainer technology. The application features a robust backend with Node.js, Express, MongoDB, Redis, and Google Gemini AI, and a modern frontend built with React, Vite, and a suite of developer-focused tools for real-time, collaborative, and AI-powered coding experiences[#1][#6].
+**AstroLith** is a full-stack, generative AI-powered software engineering agentic-platform that acts as a MERN stack developer, generating and serving code dynamically using WebContainer technology. The application features a robust backend with Node.js, Express, MongoDB, Redis, and Google Gemini AI, and a modern frontend built with React, Vite, and a suite of developer-focused tools for real-time, collaborative, and AI-powered coding experiences.
 
 ---
 
 ## 🧩 Key Features
 
-- **Generative AI Developer**: Acts as a MERN stack engineer, generating code based on user prompts and serving it instantly via WebContainer[#1][#6].
-- **WebContainer Integration**: Run Node.js code directly in the browser for a seamless, serverless development experience[#1][#6].
-- **Real-Time Collaboration**: Powered by Socket.io for instant updates and multi-user interaction[#1][#6].
-- **Project & User Management**: Create, update, and manage projects; add users to projects; maintain a file tree per project; secure authentication with hashed passwords[#1][#6].
-- **AI Integration**: Leverage Google Gemini AI for content generation and smart project assistance[#1][#6].
-- **Redis Caching**: Fast, scalable caching for improved performance[#1][#6].
-- **RESTful API**: Clean, modular, and well-documented endpoints[#1][#6].
-- **Modern UI/UX**: Built with React 18, React Router v7, and Remixicon for a fast, responsive, and beautiful interface[#1][#6].
-- **Markdown & Syntax Highlighting**: Supports markdown rendering and code highlighting for documentation and code previews[#1][#6].
-- **Developer Experience**: Integrated ESLint, React hooks linting, and Vite for fast builds and hot reloading[#1][#6].
+- **Generative AI Developer**: Acts as a MERN stack engineer, generating code based on user prompts and serving it instantly via WebContainer.
+- **WebContainer Integration**: Run Node.js code directly in the browser for a seamless, serverless development experience.
+- **Real-Time Collaboration**: Powered by Socket.io for instant updates and multi-user interaction.
+- **Project & User Management**: Create, update, and manage projects; add users to projects; maintain a file tree per project; secure authentication with hashed passwords.
+- **AI Integration**: Leverage Google Gemini AI for content generation and smart project assistance.
+- **Redis Caching**: Fast, scalable caching for improved performance.
+- **RESTful API**: Clean, modular, and well-documented endpoints.
+- **Modern UI/UX**: Built with React 18, React Router v7, and Remixicon for a fast, responsive, and beautiful interface.
+- **Markdown & Syntax Highlighting**: Supports markdown rendering and code highlighting for documentation and code previews.
+- **Developer Experience**: Integrated ESLint, React hooks linting, and Vite for fast builds and hot reloading.
 
 ---
 
@@ -143,7 +143,7 @@ npm install
 
 ## 📄 License
 
-This project is licensed under the ISC License[#1].
+This project is licensed under the ISC License.
 
 ---
 
