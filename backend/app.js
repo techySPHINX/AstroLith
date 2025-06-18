@@ -22,7 +22,7 @@ app.use('/projects', projectRoutes);
 app.use("/ai", aiRoutes)
 
 app.get('/', (req, res) => {
-    res.send('Hello World Jagan!');
+    res.send('Hello World, Welcome to AstroLith!');
 });
 
 export default app; 

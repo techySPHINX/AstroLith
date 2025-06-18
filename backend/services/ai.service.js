@@ -1,10 +1,12 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Validate API key presence
-const apiKey = process.env.GOOGLE_AI_KEY;
+const apiKey = process.env.GOOGLE_API_KEY;
 if (!apiKey) {
   throw new Error(
-    "Missing Google API Key. Set GOOGLE_AI_KEY in your environment variables."
+    "Missing Google API Key. Set GOOGLE_API_KEY in your environment variables."
   );
 }
 
