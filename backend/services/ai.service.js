@@ -84,7 +84,7 @@ export const generateResult = async (prompt) => {
 };
 
 export const generateCodeCompletion = async (codeSnippet, language) => {
-  const prompt = `Provide code completion for the following ${language} code snippet:\n```${language}\n${codeSnippet}\n```\nProvide only the completed code, no explanations.`;
+  const prompt = `Provide code completion for the following ${language} code snippet:\n\`\`\`${language}\n${codeSnippet}\n\`\`\`\nProvide only the completed code, no explanations.`;
   try {
     const result = await model.generateContent(prompt);
     return result.response.text();
@@ -95,7 +95,7 @@ export const generateCodeCompletion = async (codeSnippet, language) => {
 };
 
 export const debugCode = async (code, errorDetails) => {
-  const prompt = `Analyze the following code for bugs. If errorDetails are provided, use them to pinpoint the issue. Explain the bug and provide the corrected code.\nCode:\n```\n${code}\n```\nError Details (if any):\n${errorDetails || 'None'}`;
+  const prompt = `Analyze the following code for bugs. If errorDetails are provided, use them to pinpoint the issue. Explain the bug and provide the corrected code.\nCode:\n\`\`\n${code}\n\`\`\nError Details (if any):\n${errorDetails || 'None'}`;
   try {
     const result = await model.generateContent(prompt);
     return result.response.text();
@@ -106,7 +106,7 @@ export const debugCode = async (code, errorDetails) => {
 };
 
 export const reviewCode = async (code, context) => {
-  const prompt = `Review the following code for best practices, potential bugs, security vulnerabilities, and style issues. Provide suggestions for improvement. Consider the following context: ${context || 'None'}.\nCode:\n```\n${code}\n````;
+  const prompt = `Review the following code for best practices, potential bugs, security vulnerabilities, and style issues. Provide suggestions for improvement. Consider the following context: ${context || 'None'}.\nCode:\n\`\`\n${code}\n\`\`\n`;
   try {
     const result = await model.generateContent(prompt);
     return result.response.text();

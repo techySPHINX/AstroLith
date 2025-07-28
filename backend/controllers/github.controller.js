@@ -23,8 +23,7 @@ export const commitChanges = async (req, res) => {
             return res.status(400).json({ message: 'Project not linked to GitHub.' });
         }
 
-        // Assuming githubToken is stored with the user or passed securely
-        const githubToken = loggedInUser.githubToken; // You'll need to add this to your user model
+        const githubToken = loggedInUser.githubToken; 
 
         const commitResult = await githubService.commitFile(
             project.githubRepo.owner,
