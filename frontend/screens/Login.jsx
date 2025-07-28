@@ -8,6 +8,7 @@ const Login = () => {
 
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+    const [ githubToken, setGithubToken ] = useState('')
 
     const { setUser } = useContext(UserContext)
 
@@ -19,7 +20,8 @@ const Login = () => {
 
         axios.post('/users/login', {
             email,
-            password
+            password,
+            githubToken
         }).then((res) => {
             console.log(res.data)
 
@@ -58,6 +60,16 @@ const Login = () => {
                             id="password"
                             className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                             placeholder="Enter your password"
+                        />
+                    </div>
+                    <div className="mb-6">
+                        <label className="block text-gray-400 mb-2" htmlFor="githubToken">GitHub Personal Access Token (Optional)</label>
+                        <input
+                            onChange={(e) => setGithubToken(e.target.value)}
+                            type="text"
+                            id="githubToken"
+                            className="w-full p-3 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Enter your GitHub PAT"
                         />
                     </div>
                     <button

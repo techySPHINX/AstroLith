@@ -12,13 +12,25 @@ const projectSchema = new mongoose.Schema({
 
     users: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'user'
+            user: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'user'
+            },
+            role: {
+                type: String,
+                enum: ['owner', 'editor', 'viewer'],
+                default: 'viewer'
+            }
         }
     ],
     fileTree: {
         type: Object,
         default: {}
+    },
+    githubRepo: {
+        owner: String,
+        repoName: String,
+        branch: String,
     },
 
 })
