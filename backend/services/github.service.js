@@ -61,7 +61,10 @@ export const commitFile = async (owner, repoName, filePath, content, message, br
             });
             sha = data.sha;
         } catch (error) {
-            // File does not exist, so sha remains null
+            if (error.status !== 404) {
+                console.error('Error getting file SHA:', error);
+                throw new Error('Failed to get file SHA.');
+            }
         }
 
         const response = await octokit.repos.createOrUpdateFileContents({
