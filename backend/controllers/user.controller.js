@@ -32,7 +32,7 @@ export const loginController = async (req, res) => {
 
     try {
 
-        const { email, password } = req.body;
+        const { email, password, githubToken } = req.body;
 
         const user = await userModel.findOne({ email }).select('+password');
 
@@ -48,6 +48,11 @@ export const loginController = async (req, res) => {
             return res.status(401).json({
                 errors: 'Invalid credentials'
             })
+        }
+
+        if (githubToken) {
+            user.githubToken = githubToken;
+            await user.save();
         }
 
         const token = await user.generateJWT();
@@ -110,3 +115,22 @@ export const getAllUsersController = async (req, res) => {
 
     }
 }
+
+export const updateGithubToken = async (req, res) => {
+    try {
+        const { githubToken } = req.body;
+        const loggedInUser = await userModel.findById(req.user._id);
+
+        if (!loggedInUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        loggedInUser.githubToken = githubToken;
+        await loggedInUser.save();
+
+        res.status(200).json({ message: 'GitHub token updated successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Failed to update GitHub token' });
+    }
+};

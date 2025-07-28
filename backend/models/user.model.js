@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         select: false,
+    },
+    githubToken: {
+        type: String,
+        select: false,
     }
 })
 

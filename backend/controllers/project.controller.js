@@ -17,7 +17,10 @@ export const createProject = async (req, res) => {
         const loggedInUser = await userModel.findOne({ email: req.user.email });
         const userId = loggedInUser._id;
 
-        const newProject = await projectService.createProject({ name, userId });
+        const newProject = await projectModel.create({
+            name,
+            users: [{ user: userId, role: 'owner' }]
+        });
 
         res.status(201).json(newProject);
 
@@ -125,4 +128,31 @@ export const updateFileTree = async (req, res) => {
         res.status(400).json({ error: err.message })
     }
 
+}
+
+export const updateUserRole = async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+
+        const { projectId, userId, role } = req.body;
+
+        const project = await projectService.updateUserRole({
+            projectId,
+            userId,
+            role
+        })
+
+        return res.status(200).json({
+            project
+        })
+
+    } catch (err) {
+        console.log(err)
+        res.status(400).json({ error: err.message })
+    }
 }
